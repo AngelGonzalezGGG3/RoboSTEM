@@ -27,10 +27,10 @@
                         --------------                          */
 # 16 "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\RoboSTEM.ino"
 Motor motor_izq_ade(22, 25, 2, -1, 0x1);
-Motor motor_der_ade(26, 30, 4, 1, 0x1);
-Motor motor_der_atr(27, 28, 5, 1, 0x1);
+Motor motor_der_ade(26, 29, 4, -1, 0x1);
+Motor motor_der_atr(27, 28, 5, -1, 0x1);
 Motor motor_izq_atr(23, 24, 3, -1, 0x1);
-Mecanum motores(0.2, 0.2, &motor_izq_ade, &motor_der_ade, &motor_der_atr, &motor_izq_atr);
+Mecanum motores(0.2, 0.2,&motor_izq_ade,&motor_der_ade, &motor_der_atr, &motor_izq_atr);
 
 /*////////////// Declaracion de los Sharp ////////////////////
 
@@ -121,10 +121,12 @@ void loop() {
 
   int z = giroscopio.z(); // Recuperar el valor en z del giroscopio*/
 # 71 "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\RoboSTEM.ino"
-  motor_der_ade.Move(-255);
+  motores.Move(0, 0, 255); //(grado, angular, potencia)
   delay(1000);
-  motor_der_ade.Move(255);
+  motores.Move(90, 0, 255); //(grado, angular, potencia)
   delay(1000);
-
-  //motores.Move(180, 0, 255); //(grado, angular, potencia)
+  motores.Move(180, 0, 255); //(grado, angular, potencia)
+  delay(1000);
+  motores.Move(270, 0, 255); //(grado, angular, potencia)
+  delay(1000);
 }
