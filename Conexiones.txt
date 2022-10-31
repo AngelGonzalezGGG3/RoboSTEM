@@ -1,0 +1,67 @@
+                    Cable       Componente     Arduino
+
+RGB(0x29)           Blanco      Vin            5V
+                    Negro       GND            GND
+                    Gris        SCL            SCL
+                    Cafe        SDA            SDA
+                    Morado      INT            D18
+
+Laser_der(0x30)     Verde       XSHUT          D17
+                    Azul        SDA            SDA
+                    Rosa        SCL            SCL
+                    Gris        GND            GND
+                    Blanco      Vin            5V
+
+Laser_izq(0x31)     Amarillo    XSHUT          D16
+                    Naranja     SDA            SDA
+                    Cafe        SCL            SCL
+                    Negro       GND            GND
+                    Rojo        Vin            5V
+
+PuenteH_Der         Azul        Pin9(D2)       D22
+                    Negro       Pin8(D1)       D23
+                    Rojo        Pin7(D1)       D24
+                    Azul        Pin6(PWM2)     PWM2
+                    Negro       Pin5(PWM1)     PWM3
+                    Rojo        Pin4(D2)       D25
+                    Negro       GND            GND
+                    Rojo        5V             5V
+
+PuenteH_Der         Azul        Pin9(D2)       D26
+                    Negro       Pin8(D1)       D27
+                    Rojo        Pin7(D1)       D28
+                    Azul        Pin6(PWM2)     PWM4
+                    Negro       Pin5(PWM1)     PWM5
+                    Rojo        Pin4(D2)       D29d
+                    Negro       GND            GND
+                    Rojo        5V             5V
+
+Servo               Amarillo    Pin11          Pin11
+                    Rojo        5V             5V
+                    Cafe        GND            GND
+
+Giros(0x28)         Rojo        VCC            5V
+                    Naranja     GND            GND
+                    Amarillo    ATX            SDA
+                    Verde       LRX            SCL
+                    Azul        COM3           GND
+
+Sharp               Rojo        5V             5V
+                    Negro       GND            GND
+    dis_freA        Amarillo    Analogico      A2
+    dis_freB        Amarillo    Analogico      A6
+    dis_der1        Amarillo    Analogico      A1
+    dis_der2        Amarillo    Analogico      A7
+    dis_atrA        Amarillo    Analogico      A3
+    dis_atrB        Amarillo    Analogico      A5
+    dis_izq1        Amarillo    Analogico      A0
+    dis_izq2        Amarillo    Analogico      A4
+
+
+Ultrasonico
+
+Servo
+
+PuenteH_Mini 
+
+

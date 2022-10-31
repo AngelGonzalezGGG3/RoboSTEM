@@ -46,3 +46,11 @@ void Mecanum::Move(float deg, float ang, float pot) {
   (*M1).Move(DirF1); (*M2).Move(DirF2);
   (*M4).Move(DirF4); (*M3).Move(DirF3);
 }
+void Mecanum::turnLeft(float pot){
+  (*M1).Move(-pot); (*M2).Move(pot);
+  (*M4).Move(-pot); (*M3).Move(pot);
+}
+void Mecanum::turnRight(float pot){
+  (*M1).Move(pot); (*M2).Move(-pot);
+  (*M4).Move(pot); (*M3).Move(-pot);
+}

@@ -11,48 +11,58 @@
   },
   {
     "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\RoboSTEM.ino.cpp",
-    "Include": "",
-    "Includepath": null
+    "Include": "Adafruit_TCS34725.h",
+    "Includepath": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_TCS34725"
   },
   {
-    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\BNO055.cpp",
-    "Include": "Adafruit_BNO055.h",
-    "Includepath": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_BNO055"
-  },
-  {
-    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\BNO055.cpp",
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\RoboSTEM.ino.cpp",
     "Include": "Adafruit_I2CDevice.h",
     "Includepath": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_BusIO"
   },
   {
-    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\BNO055.cpp",
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\RoboSTEM.ino.cpp",
     "Include": "Wire.h",
     "Includepath": "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries\\Wire\\src"
   },
   {
-    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\BNO055.cpp",
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\RoboSTEM.ino.cpp",
     "Include": "Adafruit_Sensor.h",
     "Includepath": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_Unified_Sensor"
   },
   {
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\RoboSTEM.ino.cpp",
+    "Include": "Adafruit_VL53L0X.h",
+    "Includepath": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_VL53L0X\\src"
+  },
+  {
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\RoboSTEM.ino.cpp",
+    "Include": "Adafruit_BNO055.h",
+    "Includepath": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_BNO055"
+  },
+  {
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\RoboSTEM.ino.cpp",
+    "Include": "SharpIR.h",
+    "Includepath": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\SharpIR\\src"
+  },
+  {
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\RoboSTEM.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
     "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\BNO055.cpp",
     "Include": "",
     "Includepath": null
   },
   {
-    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\VL53L0X10.cpp",
-    "Include": "Adafruit_VL53L0X.h",
-    "Includepath": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_VL53L0X\\src"
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\TCS34725.cpp",
+    "Include": "",
+    "Includepath": null
   },
   {
     "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\VL53L0X10.cpp",
     "Include": "",
     "Includepath": null
-  },
-  {
-    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\distances.cpp",
-    "Include": "SharpIR.h",
-    "Includepath": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\SharpIR\\src"
   },
   {
     "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\distances.cpp",
@@ -70,7 +80,7 @@
     "Includepath": null
   },
   {
-    "Sourcefile": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_BNO055\\Adafruit_BNO055.cpp",
+    "Sourcefile": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_TCS34725\\Adafruit_TCS34725.cpp",
     "Include": "",
     "Includepath": null
   },
@@ -146,6 +156,11 @@
   },
   {
     "Sourcefile": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_VL53L0X\\src\\platform\\src\\vl53l0x_platform.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\Adafruit_BNO055\\Adafruit_BNO055.cpp",
     "Include": "",
     "Includepath": null
   },

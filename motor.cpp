@@ -21,21 +21,44 @@ Motor::Motor(int pin1, int pin2, int pwm, int dir, bool type_Stop) {
   pinMode(_pwm, OUTPUT);
 }
 
+Motor::Motor(int pin1, int pin2, int dir, bool type_Stop){
+  _pin1 = pin1;
+  _pin2 = pin2;
+  _type_Stop = type_Stop;
+
+  (dir >= 0) ? _dir = 1 : _dir = -1;
+
+  pinMode(_pin1, OUTPUT);
+  pinMode(_pin2, OUTPUT);
+}
+
 void Motor::Move(float vel) {
 
   vel = vel * _dir;
 
   if (vel > 0) {
     if (vel > 255) vel = 255;
-    digitalWrite(_pin1,HIGH);
-    digitalWrite(_pin2, LOW);
-    analogWrite(_pwm,   vel);
+    if(_pwm != 0){
+      digitalWrite(_pin1,HIGH);
+      digitalWrite(_pin2, LOW);
+      analogWrite(_pwm,   vel);
+    }
+    else{
+      analogWrite(_pin1, vel);
+      digitalWrite(_pin2,LOW);
+    }
   }
   else if (vel < 0) {
     if (vel < -255) vel = -255;
-    digitalWrite(_pin1,LOW);
-    digitalWrite(_pin2,HIGH);
-    analogWrite(_pwm,  -vel);
+    if(_pwm != 0){
+      digitalWrite(_pin1, LOW);
+      digitalWrite(_pin2,HIGH);
+      analogWrite(_pwm,  -vel);
+    }
+    else{
+      digitalWrite(_pin1,LOW);
+      analogWrite(_pin2, vel);
+    }
   }
   else {
     digitalWrite(_pin1,_type_Stop);

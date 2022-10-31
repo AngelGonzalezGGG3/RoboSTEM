@@ -8,7 +8,7 @@
 
   class BNO055{
     private: 
-      Adafruit_BNO055 _bno = Adafruit_BNO055(55, 0x29);
+      Adafruit_BNO055 _bno = Adafruit_BNO055(55, 0x28);
       sensors_event_t _orientationData; 
 
     public:

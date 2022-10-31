@@ -33,6 +33,8 @@ class Mecanum {
   public:
     Mecanum(double x, double y, Motor *motor_izquierda_adelante, Motor *motor_derecha_adelante, Motor *motor_derecha_atras, Motor *motor_izquierda_atras);
     void Move(float deg, float ang, float pot);
+    void turnLeft(float pot);
+    void turnRight(float pot);
 };
 
 #endif

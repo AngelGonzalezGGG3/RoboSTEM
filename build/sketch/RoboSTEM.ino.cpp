@@ -1,9 +1,10 @@
 #include <Arduino.h>
 #line 1 "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\RoboSTEM.ino"
 #include "mecanum.h"
-/*#include "distances.h"
+#include "TCS34725.h"
+#include "VL53L0X10.h"
 #include "BNO055.h"
-#include "VL53L0X10.h"*/
+#include "distances.h"
 
 /*////////////// Declaracion de motores y mecanum ////////////////////
                             Frente
@@ -31,56 +32,86 @@ Mecanum motores(0.2, 0.2,&motor_izq_ade,&motor_der_ade, &motor_der_atr, &motor_i
             dis_atrA -> |E           E| <- dis_atrB
             dis_izq2 -> |  E       E  | <- dis_der2
                         --------------                   */
-/*SharpIR dis_freA_sharp( SharpIR::GP2Y0A41SK0F, A0 );
-SharpIR dis_freB_sharp( SharpIR::GP2Y0A41SK0F, A1 );
-SharpIR dis_der1_sharp( SharpIR::GP2Y0A41SK0F, A2 );
-SharpIR dis_der2_sharp( SharpIR::GP2Y0A41SK0F, A3 );
-SharpIR dis_atrA_sharp( SharpIR::GP2Y0A41SK0F, A4 );
-SharpIR dis_atrB_sharp( SharpIR::GP2Y0A41SK0F, A5 );
-SharpIR dis_izq1_sharp( SharpIR::GP2Y0A41SK0F, A6 );
-SharpIR dis_izq2_sharp( SharpIR::GP2Y0A41SK0F, A7 );
+SharpIR dis_freA_sharp( SharpIR::GP2Y0A41SK0F, A2 ); //
+SharpIR dis_freB_sharp( SharpIR::GP2Y0A41SK0F, A6 ); //
+SharpIR dis_der1_sharp( SharpIR::GP2Y0A41SK0F, A1 ); //
+SharpIR dis_der2_sharp( SharpIR::GP2Y0A41SK0F, A7 ); //
+SharpIR dis_atrA_sharp( SharpIR::GP2Y0A41SK0F, A3 ); //
+SharpIR dis_atrB_sharp( SharpIR::GP2Y0A41SK0F, A5 ); //
+SharpIR dis_izq1_sharp( SharpIR::GP2Y0A41SK0F, A0 );
+SharpIR dis_izq2_sharp( SharpIR::GP2Y0A41SK0F, A4 ); //
 distancias dis_sensors(&dis_freA_sharp, &dis_freB_sharp, &dis_der1_sharp, &dis_der2_sharp, &dis_atrA_sharp, &dis_atrB_sharp, &dis_izq1_sharp, &dis_izq2_sharp);
 
 //////////////// Declaracion del giroscopio ////////////////////
 BNO055 giroscopio;
 
 //////////////// Declaracion de sensores laser ////////////////////
-VL53L0X10 dual_laser;*/
+VL53L0X10 dual_laser;
 
-#line 48 "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\RoboSTEM.ino"
+//////////////// Declaracion del sensor de color ////////////////////
+volatile boolean state = false;   // Variable que indica que se puede leer los nuevos datos del RGB
+#line 51 "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\RoboSTEM.ino"
+void isr();
+#line 58 "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\RoboSTEM.ino"
 void setup();
-#line 54 "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\RoboSTEM.ino"
+#line 68 "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\RoboSTEM.ino"
 void loop();
-#line 48 "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\RoboSTEM.ino"
-void setup() {
-  Serial.begin(115200);
-  while (! Serial) { delay(1); }
-  /*dual_laser.init(); // Inicializacion de los sensores laser
-  giroscopio.init(); // Inicializacion del giroscopio*/
-}
-void loop() {
-  /*dis_sensors.read();                 // Obtiene las mediciones de todos los sensores
-  dis_sensors.read_front_sensors();   // Obtiene las distancias de los sensores del centro
-  dis_sensors.set_position(180);      // El frente se cambia para atras ( 180° )
-  dis_sensors.add_angle2position(90); // Giro virtual de 90°
-  int dis1 = dis_sensors.dis_der1;    // Recuperas la distancia del sensor de la derecha 1
-  int dis2 = dis_sensors.dis_der2;    // Recuperas la distancia del sensor de la derecha 2
+#line 51 "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\RoboSTEM.ino"
+void isr() {state = true;}        // Funcion de interrupcion
+Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_614MS, TCS34725_GAIN_1X);
+TCS34725 RGB(&tcs, isr);
 
-  dual_laser.read();                          // Lectura de los sensores laser
+//////////////// Declaracion de los actuadores de la pinza ////////////////////
+Motor MotorMini(6,7,1,LOW);
+
+void setup() {
+  Serial.begin(115200);           // Inicializacion del Serial
+  while (! Serial) { delay(1); }  // Esperar la Inicializacion del serial
+
+  RGB.init_beforeLaser();         // Inicializacion del RGB antes de los laser
+  dual_laser.init();              // Inicializacion de los sensores laser
+  giroscopio.init();              // Inicializacion del giroscopio
+  RGB.init();                     // inicializacion del RGB
+}
+
+void loop() {
+  /*dis_sensors.read_front_sensors();   // Obtiene las distancias de los sensores del centro
+  dis_sensors.set_position(180);      // El frente se cambia para atras ( 180° )
+  dis_sensors.add_angle2position(90); // Giro virtual de 90°*/
+  dis_sensors.read();                 // Obtiene las mediciones de todos los sensores
+  Serial.print("  der1 = ");Serial.print(dis_sensors.dis_der1);    // Recuperas la distancia del sensor de la derecha 1
+  Serial.print("  der2 = ");Serial.print(dis_sensors.dis_der2);    // Recuperas la distancia del sensor de la derecha 2
+  Serial.print("  izq1 = ");Serial.print(dis_sensors.dis_izq1);    // Recuperas la distancia del sensor de la derecha 2
+  Serial.print("  izq2 = ");Serial.print(dis_sensors.dis_izq2);    // Recuperas la distancia del sensor de la derecha 2
+  Serial.print("  freA = ");Serial.print(dis_sensors.dis_freA);    // Recuperas la distancia del sensor de la derecha 2
+  Serial.print("  freB = ");Serial.print(dis_sensors.dis_freB);    // Recuperas la distancia del sensor de la derecha 2
+  Serial.print("  atrA = ");Serial.print(dis_sensors.dis_atrA);    // Recuperas la distancia del sensor de la derecha 2
+  Serial.print("  atrB = ");Serial.println(dis_sensors.dis_atrB);    // Recuperas la distancia del sensor de la derecha 2
+
+  /*dual_laser.read();                          // Lectura de los sensores laser
   int dis_laser_der = dual_laser.laser_der;   // Recuperar el valor del sensor de la derecha
   int dis_laser_izq = dual_laser.laser_izq;   // Recuperar el valor del sensor de la izquierda
+  //Serial.print(dis_laser_der); Serial.print(""); Serial.print(dis_laser_izq); 
 
   giroscopio.read();      // Lectura en x, y, z
   int x = giroscopio.x(); // Recuperar el valor en x del giroscopio
   int y = giroscopio.y(); // Recuperar el valor en y del giroscopio
-  int z = giroscopio.z(); // Recuperar el valor en z del giroscopio*/
+  int z = giroscopio.z(); // Recuperar el valor en z del giroscopio
+  Serial.print("x = "); Serial.print(x);
+  Serial.print("y = "); Serial.print(y);
+  Serial.print("z = "); Serial.println(z);
 
-  motores.Move(0, 0, 255); //(grado, angular, potencia)
-  delay(1000);
-  motores.Move(90, 0, 255); //(grado, angular, potencia)
-  delay(1000);
-  motores.Move(180, 0, 255); //(grado, angular, potencia)
-  delay(1000);
-  motores.Move(270, 0, 255); //(grado, angular, potencia)
-  delay(1000);
+  if (state) {
+    uint16_t r, g, b, c;
+    RGB.read(&r, &g, &b, &c);
+    
+    Serial.print("R: "); Serial.print(r, DEC); Serial.print(" ");
+    Serial.print("G: "); Serial.print(g, DEC); Serial.print(" ");
+    Serial.print("B: "); Serial.print(b, DEC); Serial.print(" ");
+    Serial.print("C: "); Serial.print(c, DEC); Serial.print(" ");
+    Serial.println(" ");
+    Serial.flush();
+
+    state = false;
+  }*/
 }
