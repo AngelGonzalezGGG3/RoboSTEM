@@ -46,11 +46,26 @@
   },
   {
     "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\RoboSTEM.ino.cpp",
+    "Include": "Servo.h",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\libraries\\Servo\\src"
+  },
+  {
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\RoboSTEM.ino.cpp",
     "Include": "",
     "Includepath": null
   },
   {
     "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\BNO055.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\ColorConverterLib.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "c:\\Users\\angil\\OneDrive\\Desktop\\RoboSTEM\\build\\sketch\\HCSR04.cpp",
     "Include": "",
     "Includepath": null
   },
@@ -166,6 +181,41 @@
   },
   {
     "Sourcefile": "C:\\Users\\angil\\OneDrive\\Documentos\\Arduino\\libraries\\SharpIR\\src\\SharpIR.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Program Files (x86)\\Arduino\\libraries\\Servo\\src\\avr\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Program Files (x86)\\Arduino\\libraries\\Servo\\src\\mbed\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Program Files (x86)\\Arduino\\libraries\\Servo\\src\\megaavr\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Program Files (x86)\\Arduino\\libraries\\Servo\\src\\nrf52\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Program Files (x86)\\Arduino\\libraries\\Servo\\src\\sam\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Program Files (x86)\\Arduino\\libraries\\Servo\\src\\samd\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Program Files (x86)\\Arduino\\libraries\\Servo\\src\\stm32f4\\Servo.cpp",
     "Include": "",
     "Includepath": null
   },

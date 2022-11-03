@@ -36,6 +36,7 @@ class Mecanum {
     void Move(float deg, float ang, float pot);
     void turnLeft(float pot);
     void turnRight(float pot);
+    void stop();
 };
 
 #endif

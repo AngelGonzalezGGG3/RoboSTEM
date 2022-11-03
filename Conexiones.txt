@@ -57,11 +57,16 @@ Sharp               Rojo        5V             5V
     dis_izq1        Amarillo    Analogico      A0
     dis_izq2        Amarillo    Analogico      A4
 
+Ultrasonico         Blanco      VCC            5V
+                    Negro       GND            GND
+                    Rosa        Echo           D47
+                    Gris        Trigger        D46
 
-Ultrasonico
+PuenteH_Mini        Blanco      VCC            5V
+                    Negro       GND            GND
+                    Rosa        INT1           PWM6
+                    Gris        INT2           PWM7
 
-Servo
-
-PuenteH_Mini 
-
-
+Servo               Rojo        VCC            5V
+                    Cafe        GND            GND
+                    Amarillo    PWM            PWM11

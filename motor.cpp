@@ -57,7 +57,7 @@ void Motor::Move(float vel) {
     }
     else{
       digitalWrite(_pin1,LOW);
-      analogWrite(_pin2, vel);
+      analogWrite(_pin2, -vel);
     }
   }
   else {

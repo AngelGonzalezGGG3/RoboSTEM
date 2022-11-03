@@ -1,0 +1,86 @@
+/*dis_sensors.read_front_sensors();   // Obtiene las distancias de los sensores del centro
+    dis_sensors.set_position(180);      // El frente se cambia para atras ( 180° )
+    dis_sensors.add_angle2position(90); // Giro virtual de 90°*/
+    /*dis_sensors.read();                 // Obtiene las mediciones de todos los sensores
+    Serial.print("  der1 = ");Serial.print(dis_sensors.dis_der1);    // Recuperas la distancia del sensor de la derecha 1
+    Serial.print("  der2 = ");Serial.print(dis_sensors.dis_der2);    // Recuperas la distancia del sensor de la derecha 2
+    Serial.print("  izq1 = ");Serial.print(dis_sensors.dis_izq1);    // Recuperas la distancia del sensor de la derecha 2
+    Serial.print("  izq2 = ");Serial.print(dis_sensors.dis_izq2);    // Recuperas la distancia del sensor de la derecha 2
+    Serial.print("  freA = ");Serial.print(dis_sensors.dis_freA);    // Recuperas la distancia del sensor de la derecha 2
+    Serial.print("  freB = ");Serial.print(dis_sensors.dis_freB);    // Recuperas la distancia del sensor de la derecha 2
+    Serial.print("  atrA = ");Serial.print(dis_sensors.dis_atrA);    // Recuperas la distancia del sensor de la derecha 2
+    Serial.print("  atrB = ");Serial.println(dis_sensors.dis_atrB);    // Recuperas la distancia del sensor de la derecha 2*/
+
+    //servo.write(45);
+    //servoMove(65, 150, 30);
+
+    /*bajar_pinza();
+    delay(2000);
+    subir_pinza();
+    delay(2000);*/
+    
+    
+    
+
+    //Serial.println(ultrasonico.read());
+
+    /*dual_laser.read();                          // Lectura de los sensores laser
+    int dis_laser_der = dual_laser.laser_der;   // Recuperar el valor del sensor de la derecha
+    int dis_laser_izq = dual_laser.laser_izq;   // Recuperar el valor del sensor de la izquierda
+    //Serial.print(dis_laser_der); Serial.print(""); Serial.print(dis_laser_izq); 
+
+    giroscopio.read();      // Lectura en x, y, z
+    int x = giroscopio.x(); // Recuperar el valor en x del giroscopio
+    int y = giroscopio.y(); // Recuperar el valor en y del giroscopio
+    int z = giroscopio.z(); // Recuperar el valor en z del giroscopio
+    Serial.print("x = "); Serial.print(x);
+    Serial.print("y = "); Serial.print(y);
+    Serial.print("z = "); Serial.println(z);
+
+    if (state) {
+      uint16_t r, g, b, c;
+      RGB.read(&r, &g, &b, &c);
+      
+      Serial.print("R: "); Serial.print(r, DEC); Serial.print(" ");
+      Serial.print("G: "); Serial.print(g, DEC); Serial.print(" ");
+      Serial.print("B: "); Serial.print(b, DEC); Serial.print(" ");
+      Serial.print("C: "); Serial.print(c, DEC); Serial.print(" ");
+      Serial.println(" ");
+      Serial.flush();
+
+      state = false;
+    }*/
+
+    /*dis_sensors.set_position(180);
+    dis_sensors.read();
+    Serial.print("  freA = "); Serial.print(dis_sensors.dis_freA);
+    Serial.print("  freB = "); Serial.print(dis_sensors.dis_freB);
+    Serial.print("  atrA = "); Serial.print(dis_sensors.dis_atrA);
+    Serial.print("  atrB = "); Serial.print(dis_sensors.dis_atrB);
+    Serial.print("  izq1 = "); Serial.print(dis_sensors.dis_izq1);
+    Serial.print("  izq2 = "); Serial.print(dis_sensors.dis_izq2);
+    Serial.print("  der1 = "); Serial.print(dis_sensors.dis_der1);
+    Serial.print("  der2 = "); Serial.println(dis_sensors.dis_der2);*/
+
+
+    /*Serial.print("  freA = "); Serial.print(dis_sensors.dis_freA);
+    Serial.print("  freB = "); Serial.print(dis_sensors.dis_freB);    
+    Serial.print("  Z = "); Serial.print(z);
+    Serial.print("  pos = "); Serial.println(dis_sensors.position);*/
+    
+
+    /*dis_sensors.read();
+    Serial.print(dis_sensors.dis_izq1); Serial.print("    "); Serial.println(dis_sensors.dis_izq2);
+
+    if(dis_sensors.dis_izq1 >  8 || dis_sensors.dis_izq2 > 8){
+      motores.Move(90, 0, 150);
+    }
+    else if(dis_sensors.dis_izq1 > dis_sensors.dis_izq2){
+      motores.Move(0, 1, 150);
+    }
+    else if(dis_sensors.dis_izq1 < dis_sensors.dis_izq2){
+      motores.Move(0, -1, 150);
+    }
+    else{
+      motores.Move(0, 0, 150);
+    }*/

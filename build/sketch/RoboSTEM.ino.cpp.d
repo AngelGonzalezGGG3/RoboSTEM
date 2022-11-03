@@ -18,6 +18,7 @@ c:\Users\angil\OneDrive\Desktop\RoboSTEM\build\sketch\RoboSTEM.ino.cpp.o: \
  C:\Users\angil\OneDrive\Documentos\Arduino\libraries\Adafruit_BusIO/Adafruit_I2CDevice.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\libraries\Wire\src/Wire.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Stream.h \
+ c:\Users\angil\OneDrive\Desktop\RoboSTEM\build\sketch\ColorConverterLib.h \
  c:\Users\angil\OneDrive\Desktop\RoboSTEM\build\sketch\VL53L0X10.h \
  C:\Users\angil\OneDrive\Documentos\Arduino\libraries\Adafruit_Unified_Sensor/Adafruit_Sensor.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Print.h \
@@ -37,4 +38,7 @@ c:\Users\angil\OneDrive\Desktop\RoboSTEM\build\sketch\RoboSTEM.ino.cpp.o: \
  C:\Users\angil\OneDrive\Documentos\Arduino\libraries\Adafruit_BNO055/utility/vector.h \
  C:\Users\angil\OneDrive\Documentos\Arduino\libraries\Adafruit_BNO055/utility/quaternion.h \
  c:\Users\angil\OneDrive\Desktop\RoboSTEM\build\sketch\distances.h \
- C:\Users\angil\OneDrive\Documentos\Arduino\libraries\SharpIR\src/SharpIR.h
+ C:\Users\angil\OneDrive\Documentos\Arduino\libraries\SharpIR\src/SharpIR.h \
+ c:\Users\angil\OneDrive\Desktop\RoboSTEM\build\sketch\HCSR04.h \
+ C:\Program\ Files\ (x86)\Arduino\libraries\Servo\src/Servo.h \
+ C:\Program\ Files\ (x86)\Arduino\libraries\Servo\src/avr/ServoTimers.h
