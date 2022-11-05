@@ -84,3 +84,40 @@
     else{
       motores.Move(0, 0, 150);
     }*/
+
+
+
+
+
+    /*int prom_fre = (dis_sensors.dis_freA+dis_sensors.dis_freB)/2; // Se promedian los sensores de al frente
+      if(prom_fre <= 4){                                            // Si el robot esta muy pegado a la pared de al frente
+        motores.Move(dis_sensors.position_back,0,255);              // Se mueve hacia atras
+        while(prom_fre <= 4){                                        // Hasta que la distancia sea mayor a 6cm
+          dis_sensors.read_front_sensors();
+          prom_fre = (dis_sensors.dis_freA+dis_sensors.dis_freB)/2;
+        }
+      }*/
+
+
+      /*//FIXME: Comprobar que no este tan pegado a las paredes de la derecha o la izquierda, que sea en intervalos de tiempo
+    
+
+    /*dis_sensors.set_position(0);
+    dis_sensors.read();
+    Serial.print("  freA = "); Serial.print(dis_sensors.dis_freA);
+    Serial.print("  freB = "); Serial.print(dis_sensors.dis_freB);
+    Serial.print("  atrA = "); Serial.print(dis_sensors.dis_atrA);
+    Serial.print("  atrB = "); Serial.print(dis_sensors.dis_atrB);
+    Serial.print("  izq1 = "); Serial.print(dis_sensors.dis_izq1);
+    Serial.print("  izq2 = "); Serial.print(dis_sensors.dis_izq2);
+    Serial.print("  der1 = "); Serial.print(dis_sensors.dis_der1);
+    Serial.print("  der2 = "); Serial.println(dis_sensors.dis_der2);*/
+
+
+    /*if(x < -2){
+      piramide = 1;
+      motores.Move(dis_sensors.position_back, 0, 255);
+      delay(400);
+      es_subida = true;
+      dis_sensors.set_position(180);
+    }*/

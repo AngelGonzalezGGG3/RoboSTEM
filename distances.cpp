@@ -14,6 +14,8 @@ distancias::distancias(SharpIR *sen_dis_freA, SharpIR *sen_dis_freB, SharpIR *se
   _dis_atrB = sen_dis_atrB;
   _dis_izq1 = sen_dis_izq1;
   _dis_izq2 = sen_dis_izq2;
+
+  set_position(0);
 }
 
 void distancias::set_position(int position_value){

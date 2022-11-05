@@ -6,21 +6,6 @@ void BNO055::init(){
   digitalWrite(43, HIGH);
   delay(100);
   if (!_bno.begin()) { Serial.print("No BNO055 detected"); while (1); }
-
-  /*while(1){
-    Serial.print("while");
-    if(_bno.begin()){
-      break;
-      Serial.println("BNO055 detected");
-    }
-    else{
-      Serial.println("No BNO055 detected");
-      digitalWrite(43, LOW);
-      delay(1000);
-      digitalWrite(43, HIGH);
-      delay(100);
-    }
-  }*/
 }
 
 void BNO055::read(){ 
@@ -28,7 +13,10 @@ void BNO055::read(){
 }
 
 float BNO055::z(){
-  return _orientationData.orientation.x;
+  int _z = _orientationData.orientation.x - z_offset;
+  if(_z < 0) _z = 360 + _z;
+  Serial.println(_z);
+  return _z;
 }
 
 float BNO055::y(){
@@ -37,4 +25,11 @@ float BNO055::y(){
 
 float BNO055::x(){
   return _orientationData.orientation.z;
+}
+
+void BNO055::set_z_offset(int degree){
+  z_offset = z_offset + degree;
+  
+  if(z_offset >= 360) z_offset = z_offset - 360;
+  else if(z_offset < 0) z_offset = 360 + z_offset;
 }
